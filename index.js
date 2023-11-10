@@ -123,7 +123,8 @@ for (var i = 0; i < totalMonths; i++) {
     greatestDecrease = monthlyChange; //If decrease is bigger than any previous record in the loop, the variable is overwritten with the bigger value
     greatestDecreaseDate = finances[i][0]; //This stores the month the above occurred to a variable
   }
-} //End of for loop
+} 
+//End of for loop
 
-//Logging the output to the console
+//Logging the calculations to the console
 console.log("Financial Analysis\n------------------\nTotal Months: " + totalMonths + "\nTotal: £" + netTotal + "\nAverage Change: £" + averageMonthlyChange + "\nGreatest Increase in Profits/Losses: " + greatestIncreaseDate + " (£" + greatestIncrease + ")" + "\nGreatest Decrease in Profits/Losses: " + greatestDecreaseDate + " (£" + greatestDecrease + ")");
