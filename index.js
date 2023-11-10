@@ -93,12 +93,12 @@ var netTotal = 0; //Initialised to zero or sum below returns NaN error in consol
 var currentMonth;
 var previousMonth;
 var monthlyChange = 0;
-var totalMonthlyChange = 0;
-var averageTotalChange;
+var totalOfMonthlyChanges = 0;
+var averageMonthlyChange;
 var greatestIncrease = 0;
 var greatestDecrease = 0;
-var greatestIncreaseMonth;
-var greatestDecreaseMonth;
+var greatestIncreaseDate;
+var greatestDecreaseDate;
 
 //Start of for loop
 for (var i = 0; i < totalMonths; i++) {
@@ -112,18 +112,18 @@ for (var i = 0; i < totalMonths; i++) {
     monthlyChange = currentMonth - previousMonth; //Calculates the difference in profit/loss between each month, omitting the first month
   }
   previousMonth = currentMonth; //Assigns the value of the current month's profit/loss to the previousMonth variable, ready for the next pass through the loop
-  totalMonthlyChange = totalMonthlyChange + monthlyChange; //Calculates the total change in profit/losses from month to month, over the whole period
-  averageTotalChange = Math.round(totalMonthlyChange / (totalMonths - 1)*100)/100; //Calculates the average monthly change of profit/loss and rounds to nearest 100th
+  totalOfMonthlyChanges = totalOfMonthlyChanges + monthlyChange; //Calculates the total change in profit/losses from month to month, over the whole period
+  averageMonthlyChange = Math.round(totalOfMonthlyChanges / (totalMonths - 1)*100)/100; //Calculates the average monthly change of profit/loss and rounds to nearest 100th
 
   //Establishes the greatest increase and decrease between months, and which month/year this occurred in
   if (greatestIncrease < monthlyChange) {
     greatestIncrease = monthlyChange; //If increase is bigger than any previous record in the loop, the variable is overwritten with the bigger value
-    greatestIncreaseMonth = finances[i][0]; //This stores the month the above occurred to a variable
+    greatestIncreaseDate = finances[i][0]; //This stores the month the above occurred to a variable
   } else if (greatestDecrease > monthlyChange) { 
     greatestDecrease = monthlyChange; //If decrease is bigger than any previous record in the loop, the variable is overwritten with the bigger value
-    greatestDecreaseMonth = finances[i][0]; //This stores the month the above occurred to a variable
+    greatestDecreaseDate = finances[i][0]; //This stores the month the above occurred to a variable
   }
 } //End of for loop
 
 //Logging the output to the console
-console.log("Financial Analysis\n------------------\nTotal Months: " + totalMonths + "\nTotal: £" + netTotal + "\nAverage Change: £" + averageTotalChange + "\nGreatest Increase in Profits/Losses: " + greatestIncreaseMonth + " (£" + greatestIncrease + ")" + "\nGreatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " (£" + greatestDecrease + ")");
+console.log("Financial Analysis\n------------------\nTotal Months: " + totalMonths + "\nTotal: £" + netTotal + "\nAverage Change: £" + averageMonthlyChange + "\nGreatest Increase in Profits/Losses: " + greatestIncreaseDate + " (£" + greatestIncrease + ")" + "\nGreatest Decrease in Profits/Losses: " + greatestDecreaseDate + " (£" + greatestDecrease + ")");
