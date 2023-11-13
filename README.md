@@ -30,7 +30,7 @@ Click on the URL. Right click to inspect and the output will be displayed in the
 
 ## Usage
 
-URL: 
+URL: https://drrobotnik7.github.io/Console-Finances/
 
 Inspect the web page and view the output in the console log.
 
