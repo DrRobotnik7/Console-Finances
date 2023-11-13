@@ -105,14 +105,14 @@ for (var i = 0; i < totalMonths; i++) {
 
   //Calculating net total
   currentMonthProfitLoss = finances[i][1]; // Pulls the profit/loss value out of the subarray and assigns to the currentMonth variable. The loop proceeds to the next subarray with each pass.
-  netTotal = netTotal + currentMonthProfitLoss; // Calculates the net total of profit/losses over the entire period. Adds the current month value to the net total with each pass of the loop.
+  netTotal += currentMonthProfitLoss; // Calculates the net total of profit/losses over the entire period. Adds the current month value to the net total with each pass of the loop.
 
   //Calculating the average of the changes between each month
   if (i > 0) { 
     monthlyChange = currentMonthProfitLoss - previousMonthProfitLoss; //Calculates the difference in profit/loss between each month, omitting the first month
   }
   previousMonthProfitLoss = currentMonthProfitLoss; //Assigns the value of the current month's profit/loss to the previousMonth variable, ready for the next pass through the loop
-  totalOfMonthlyChanges = totalOfMonthlyChanges + monthlyChange; //Calculates the total change in profit/losses from month to month, over the whole period
+  totalOfMonthlyChanges += monthlyChange; //Calculates the total change in profit/losses from month to month, over the whole period
   averageMonthlyChange = Math.round(totalOfMonthlyChanges / (totalMonths - 1)*100)/100; //Calculates the average monthly change of profit/loss and rounds to nearest 100th
 
   //Establishes the greatest increase and decrease between months, and which month/year this occurred in

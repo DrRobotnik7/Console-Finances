@@ -2,7 +2,20 @@
 
 ## Description
 
-JavaScript algorithm for analysing the financial records of a company. The code outputs the following information from profit/loss records, dating from January 2010 to February 2017.
+JavaScript algorithm for analysing the financial records of a company. The code outputs the following information from profit/loss records, dating from January 2010 to February 2017:
+
+* The total number of months included in the dataset.
+
+* The net total amount of Profit/Losses over the entire period.
+
+* The average of the changes in Profit/Losses over the entire period.
+
+* You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+(Total/(Number of months - 1))
+
+* The greatest increase in Profit/Losses (date and amount) over the entire period.
+
+* The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
 ## Table of Contents
 
