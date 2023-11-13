@@ -90,8 +90,8 @@ var finances = [
 // Variable declarations, outside of the for loop
 var totalMonths = finances.length; // Total number of months in array
 var netTotal = 0; //Initialised to zero or sum below returns NaN error in console (not a number). Same reason for the other variables below
-var currentMonth;
-var previousMonth;
+var currentMonthProfitLoss;
+var previousMonthProfitLoss;
 var monthlyChange = 0;
 var totalOfMonthlyChanges = 0;
 var averageMonthlyChange;
@@ -104,14 +104,14 @@ var greatestDecreaseDate;
 for (var i = 0; i < totalMonths; i++) {
 
   //Calculating net total
-  currentMonth = finances[i][1]; // Pulls the profit/loss value out of the subarray and assigns to the currentMonth variable. The loop proceeds to the next subarray with each pass.
-  netTotal = netTotal + currentMonth; // Calculates the net total of profit/losses over the entire period. Adds the current month value to the net total with each pass of the loop.
+  currentMonthProfitLoss = finances[i][1]; // Pulls the profit/loss value out of the subarray and assigns to the currentMonth variable. The loop proceeds to the next subarray with each pass.
+  netTotal = netTotal + currentMonthProfitLoss; // Calculates the net total of profit/losses over the entire period. Adds the current month value to the net total with each pass of the loop.
 
   //Calculating the average of the changes between each month
   if (i > 0) { 
-    monthlyChange = currentMonth - previousMonth; //Calculates the difference in profit/loss between each month, omitting the first month
+    monthlyChange = currentMonthProfitLoss - previousMonthProfitLoss; //Calculates the difference in profit/loss between each month, omitting the first month
   }
-  previousMonth = currentMonth; //Assigns the value of the current month's profit/loss to the previousMonth variable, ready for the next pass through the loop
+  previousMonthProfitLoss = currentMonthProfitLoss; //Assigns the value of the current month's profit/loss to the previousMonth variable, ready for the next pass through the loop
   totalOfMonthlyChanges = totalOfMonthlyChanges + monthlyChange; //Calculates the total change in profit/losses from month to month, over the whole period
   averageMonthlyChange = Math.round(totalOfMonthlyChanges / (totalMonths - 1)*100)/100; //Calculates the average monthly change of profit/loss and rounds to nearest 100th
 
