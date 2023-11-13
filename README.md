@@ -34,7 +34,7 @@ URL: https://drrobotnik7.github.io/Console-Finances/
 
 Inspect the web page and view the output in the console log.
 
-![Console Finances webpage screenshot](/images/html-screenshot.png)
+![Console Finances webpage screenshot](/images/webpage-screenshot.png)
 ![Console Finances console log screenshot](/images/console-screenshot.png)
 
 ## Credits
